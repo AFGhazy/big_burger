@@ -12,5 +12,8 @@ class SplashPresenter<V : SplashContract.View, I : SplashInteractor> @Inject con
 ) :
     BasePresenterImp<V, I>(interactor = interactor, compositeDisposable = compositeDisposable),
     SplashContract.Presenter<V, I> {
+    override fun loadedSuccessfully() {
+        view?.navigateToCatalog()
+    }
 
 }

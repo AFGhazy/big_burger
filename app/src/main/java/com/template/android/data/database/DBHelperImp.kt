@@ -1,4 +1,6 @@
 package com.template.android.data.database
 
-class DBHelperImp : DBHelper {
+import javax.inject.Inject
+
+class DBHelperImp @Inject constructor() : DBHelper {
 }

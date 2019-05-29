@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Android Kotlin Template</string>
+    <string name="app_name">Big Burger</string>
+
+    <string name="catalog_burger_image_content_description">Image of burger menu item.</string>
+    <string name="catalog_burger_add_more_button_label">Add one more</string>
+    <string name="catalog_burger_remove_all_button_label">Remove all</string>
 </resources>

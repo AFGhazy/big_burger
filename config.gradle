@@ -23,12 +23,12 @@ ext {
             }
             return Integer.parseInt(stdout.toString().trim())
         } catch (ignored) {
-            return -1
+            return 1
         }
     }
 
     sdk = [
-            minSdkVersion          : 14,
+            minSdkVersion          : 21,
             targetSdkVersion       : 28,
             compileSdkVersion      : 28,
             appcompatVersion       : "1.0.2",
@@ -36,7 +36,8 @@ ext {
             multiDexVersion        : '2.0.1',
             recyclerViewVersion    : '1.0.0',
             cardViewVersion        : '1.0.0',
-            constraintLayoutVersion: '2.0.0-alpha4'
+            constraintLayoutVersion: '2.0.0-alpha4',
+            roomVersion            : '2.1.0-beta01'
     ]
 
     test = [
@@ -53,7 +54,6 @@ ext {
             rxjava2Version                 : "2.2.3",
             leakcanaryVersion              : "1.6.2",
             rxandroid2Version              : "2.1.0",
-            crashlyticsVersion             : "2.9.7@aar",
             ktlintVersion                  : '0.29.0',
             alerterVersion                 : "4.0.0",
             gsonVersion                    : "2.8.5",

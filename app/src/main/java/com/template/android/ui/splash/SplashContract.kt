@@ -6,10 +6,10 @@ import com.template.android.ui.splash.interactor.SplashInteractor
 
 interface SplashContract {
     interface Presenter<V : View, I : SplashInteractor> : BasePresenter<V, I> {
-
+        fun loadedSuccessfully()
     }
 
     interface View : BaseViewContract {
-
+        fun navigateToCatalog()
     }
 }

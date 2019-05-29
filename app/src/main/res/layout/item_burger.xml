@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content">
+
+    <ImageView
+            android:id="@+id/burgerIv"
+            android:contentDescription="@string/catalog_burger_image_content_description"
+            android:layout_width="100dp" android:layout_height="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+    />
+
+    <TextView
+            android:id="@+id/titleTv"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            tools:text="Hello World!"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@id/burgerIv"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+            android:id="@+id/descriptionTv"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            tools:text="Hello World!"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@id/titleTv"
+            app:layout_constraintStart_toStartOf="@id/titleTv"/>
+
+    <TextView
+            android:id="@+id/priceTv"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            tools:text="Hello World!"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@id/descriptionTv"
+            app:layout_constraintStart_toStartOf="@id/descriptionTv"/>
+
+    <Button android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:id="@+id/addMorebtn"
+            android:text="@string/catalog_burger_add_more_button_label"
+            android:background="@drawable/ripple_add_more_button"
+            app:layout_constraintTop_toBottomOf="@id/priceTv"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="@id/priceTv"/>
+
+    <Button android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:id="@+id/removeAllBtn"
+            android:text="@string/catalog_burger_remove_all_button_label"
+            android:background="@drawable/ripple_remove_all_button"
+            app:layout_constraintTop_toBottomOf="@id/priceTv"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp"
+            app:layout_constraintStart_toEndOf="@id/addMorebtn"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

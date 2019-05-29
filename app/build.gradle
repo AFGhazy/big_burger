@@ -6,8 +6,6 @@ apply plugin: 'kotlin-kapt'
 
 apply plugin: 'kotlin-android-extensions'
 
-apply plugin: 'io.fabric'
-
 apply plugin: 'org.jetbrains.kotlin.android.extensions'
 
 android {
@@ -19,6 +17,7 @@ android {
     }
 
     defaultConfig {
+            buildConfigField "String", "BASE_URL", '"http://legacy.vibuy.com/dump/"'
         applicationId "com.template.android"
         minSdkVersion rootProject.ext.sdk["minSdkVersion"]
         targetSdkVersion rootProject.ext.sdk["targetSdkVersion"]
@@ -103,11 +102,6 @@ dependencies {
     releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:${external["leakcanaryVersion"]}"
     debugImplementation "com.squareup.leakcanary:leakcanary-support-fragment:${external["leakcanaryVersion"]}"
 
-    // Fabric
-    implementation("com.crashlytics.sdk.android:crashlytics:${external["crashlyticsVersion"]}") {
-        transitive = true;
-    }
-
     // Linting
     ktlint "com.github.shyiko:ktlint:${external["ktlintVersion"]}"
 
@@ -135,6 +129,18 @@ dependencies {
 
     // Permissions
     implementation "com.github.tbruyelle:rxpermissions:${external["rxpermissionsVersion"]}"
+
+    implementation "androidx.room:room-runtime:${sdk["roomVersion"]}"
+    annotationProcessor "androidx.room:room-compiler:${sdk["roomVersion"]}" // For Kotlin use kapt instead of annotationProcessor
+    // optional - RxJava support for Room
+    implementation "androidx.room:room-rxjava2:${sdk["roomVersion"]}"
+
+    // optional - Guava support for Room, including Optional and ListenableFuture
+    implementation "androidx.room:room-guava:${sdk["roomVersion"]}"
+
+    // Test helpers
+    testImplementation "androidx.room:room-testing:${sdk["roomVersion"]}"
+
 }
 
 task ktlint(type: JavaExec, group: "verification") {
@@ -150,5 +156,3 @@ task ktlintFormat(type: JavaExec, group: "formatting") {
     classpath = configurations.ktlint
     args "-F", "src/**/*.kt"
 }
-
-apply plugin: 'com.google.gms.google-services'
