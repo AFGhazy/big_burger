@@ -6,5 +6,6 @@ class Constants {
         const val EPSILON = 1e-3
         const val RETRO_CACHE_SIZE = 10 * 1024 * 1024L
         const val RETRO_CACHE_CHILD = "retro_responses"
+        const val ROOM_DATABASE_NAME = "ORDERS"
     }
 }

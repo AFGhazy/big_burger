@@ -3,16 +3,19 @@ package com.template.android.di.module
 import android.app.Application
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
+import androidx.room.Room
 import com.template.android.BuildConfig
 import com.template.android.R
 import com.template.android.data.database.DBHelper
 import com.template.android.data.database.DBHelperImp
+import com.template.android.data.database.RoomDatabase
 import com.template.android.data.network.ApiHelper
 import com.template.android.data.network.ApiHelperImp
 import com.template.android.data.network.BurgerService
 import com.template.android.di.scope.PerApplication
 import com.template.android.util.Constants.Companion.RETRO_CACHE_CHILD
 import com.template.android.util.Constants.Companion.RETRO_CACHE_SIZE
+import com.template.android.util.Constants.Companion.ROOM_DATABASE_NAME
 import dagger.Module
 import dagger.Provides
 import io.reactivex.disposables.CompositeDisposable
@@ -69,4 +72,8 @@ class ApplicationModule(private val application: Application) {
         .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .build().create(BurgerService::class.java)
+
+    @Provides
+    @Singleton
+    fun provideRoomDatabase() = Room.databaseBuilder(application, RoomDatabase::class.java, ROOM_DATABASE_NAME).build()
 }

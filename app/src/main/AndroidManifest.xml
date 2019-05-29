@@ -22,6 +22,9 @@
         </activity>
         <activity android:name=".ui.catalog.view.CatalogActivity"
                   android:label="Catalog"/>
+
+        <activity android:name=".ui.cart.view.CartActivity"
+                  android:label="Cart"/>
     </application>
 
 </manifest>

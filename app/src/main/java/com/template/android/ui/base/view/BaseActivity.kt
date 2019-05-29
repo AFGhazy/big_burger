@@ -1,5 +1,6 @@
 package com.template.android.ui.base.view
 
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.template.android.BaseApp
 import com.template.android.di.component.ActivityComponent

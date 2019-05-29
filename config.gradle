@@ -59,7 +59,8 @@ ext {
             gsonVersion                    : "2.8.5",
             glide                          : "4.8.0",
             autofittextview                : "0.2.+",
-            rxpermissionsVersion           : "0.10.2"
+            rxpermissionsVersion           : "0.10.2",
+            dbDebug                        : "1.0.6"
     ]
 
     firebase = [

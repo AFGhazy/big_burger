@@ -2,6 +2,10 @@ package com.template.android.di.module
 
 import com.template.android.di.scope.PerActivity
 import com.template.android.ui.base.view.BaseActivity
+import com.template.android.ui.cart.CartContract
+import com.template.android.ui.cart.interactor.CartInteractor
+import com.template.android.ui.cart.interactor.CartInteractorImp
+import com.template.android.ui.cart.presenter.CartPresenter
 import com.template.android.ui.catalog.CatalogContract
 import com.template.android.ui.catalog.interactor.CatalogInteractor
 import com.template.android.ui.catalog.interactor.CatalogInteractorImp
@@ -34,4 +38,14 @@ class ActivityModule(private val activity: BaseActivity) {
     internal fun provideCatalogPresenter (
         presenter: CatalogPresenter<CatalogContract.View, CatalogInteractor>
     ): CatalogContract.Presenter<CatalogContract.View, CatalogInteractor> = presenter
+
+    @Provides
+    @PerActivity
+    internal fun provideCartInteractor(interactor: CartInteractorImp) : CartInteractor = interactor
+
+    @Provides
+    @PerActivity
+    internal fun provideCartPresenter (
+        presenter: CartPresenter<CartContract.View, CartInteractor>
+    ): CartContract.Presenter<CartContract.View, CartInteractor> = presenter
 }

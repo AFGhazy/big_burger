@@ -16,7 +16,9 @@ import javax.inject.Inject
 
 class SplashFragment : BaseFragment(), SplashContract.View {
     override fun navigateToCatalog() {
-        startActivity(Intent(context, CatalogActivity::class.java))
+        startActivity(Intent(context, CatalogActivity::class.java).apply {
+            flags = (Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+        })
     }
 
     @Inject

@@ -4,4 +4,8 @@
     <string name="catalog_burger_image_content_description">Image of burger menu item.</string>
     <string name="catalog_burger_add_more_button_label">Add one more</string>
     <string name="catalog_burger_remove_all_button_label">Remove all</string>
+    <string name="successful_operation">Done!</string>
+    <string name="something_went_wrong">Error! something went wrong!</string>
+    <string name="catalog_cart_button_label">Show My Cart</string>
+    <string name="cart_total_pricing">Total price: %1$s</string>
 </resources>

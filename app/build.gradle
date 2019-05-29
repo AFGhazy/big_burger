@@ -131,7 +131,7 @@ dependencies {
     implementation "com.github.tbruyelle:rxpermissions:${external["rxpermissionsVersion"]}"
 
     implementation "androidx.room:room-runtime:${sdk["roomVersion"]}"
-    annotationProcessor "androidx.room:room-compiler:${sdk["roomVersion"]}" // For Kotlin use kapt instead of annotationProcessor
+    kapt "androidx.room:room-compiler:${sdk["roomVersion"]}" // For Kotlin use kapt instead of annotationProcessor
     // optional - RxJava support for Room
     implementation "androidx.room:room-rxjava2:${sdk["roomVersion"]}"
 
@@ -141,6 +141,7 @@ dependencies {
     // Test helpers
     testImplementation "androidx.room:room-testing:${sdk["roomVersion"]}"
 
+    debugImplementation "com.amitshekhar.android:debug-db:${external["dbDebug"]}"
 }
 
 task ktlint(type: JavaExec, group: "verification") {
